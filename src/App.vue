@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <div v-show="islogin">
+      <header id="header" class="noprint"> <span>QUARANTINE PASS MANAGEMENT SYSTEM</span></header>
+      <sideNav class="noprint"/>
+    
+        <div id="mainBody">
+           <router-view/>
+        </div>
+      </div>
+      
+      <div id="login" v-if="!islogin">
+         <login/>
+      </div>  
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import sideNav from '@/components/navigator/sidenavComponent'
+import login from '@/components/LoginComponent'
+import { mapState } from 'vuex'
 export default {
   name: 'App',
+  data: function(){
+    return {
+      // islogin: this.$store.state.islogin || false,
+    }
+  },
+  mounted(){
+    let app = this
+    if(!app.islogin) app.$router.replace("/")
+  },
+  computed: {
+    ...mapState([
+        'islogin'
+    ])
+  },
+  methods:{
+
+   
+  },
   components: {
-    HelloWorld
+   sideNav,
+   login
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+@media print {
+  
+    .noprint {
+        display: none;
+    }
 }
 </style>

@@ -1,0 +1,216 @@
+@import "~bootstrap/scss/bootstrap";
+@import "../css/main.css";
+
+html , body {
+    height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    font-family: 'calibri';
+}
+
+#heading {
+    height: 200px;
+    background: black;
+  
+}
+  
+#mainBody {
+padding: 90px 10px 10px 310px;
+}
+
+
+header {
+    width: 100%;
+    margin-left: 302px;
+    height: 80px;
+    background: white;
+    position: fixed;
+    box-shadow: 2px 2px 2px dimgray;
+    padding: 15px 10px; 
+    z-index: 9;
+}
+
+header span {
+    font-size: 18pt;
+}
+
+#app {
+    height: 100%;
+}
+
+aside {
+    height: 100%;
+    width: 300px;
+    background: #10362B;
+    box-shadow: 2px 2px 1px dimgray;
+    position: fixed;
+}
+
+aside ul {
+    margin-top: 10px;
+}
+
+aside div#accountinfo {
+    width: 100%;
+    height: 100px;
+    background: #081B15;
+    margin-bottom: 2px;
+    margin-top: 80px;
+}
+
+aside div div span {
+    color: white;
+    font-size: 12pt;
+   
+}
+
+aside div#accountinfo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-top: 20px;
+    margin-left:5px;
+}
+
+aside ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+aside ul li {    
+    /* padding: 5pt 10pt; */
+    display: block;
+    padding: 5pt 0pt;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #EEEEEE;
+    font-size: 16pt;
+    padding: 0pt 10pt;
+}
+
+aside ul li a:hover {
+    color: #4267B2;
+    text-decoration: none;
+
+}
+
+.active, .active a {
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown {
+    display: block;
+    position: relative;
+}
+
+.dropdown-content{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #081B15;
+    padding: 10pt;
+    margin:0;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+.dropdown-content a:hover{
+    color: white;
+}
+
+.dropdown-content span {
+    font-size: 10pt;
+    margin-top: 5px;
+    float: left;
+}
+
+.navtext{
+    font-style: normal;
+    font-weight: normal;
+}
+
+span.pageheader {
+    color: dimgray;
+    font-weight: normal;
+    font-size: 20pt;
+}
+
+.btn-primary {
+    background: #10362B !important;
+}
+
+
+.card , .form-control {
+    box-shadow: 1.5px 1px 1.5px black !important;
+    // z-index: -99999 !important;
+}
+
+
+.card-title {
+    font-weight: bold !important;
+    color: dimgray !important;
+    padding: 0 !important;
+}
+
+.bg-primary {
+    background: #10362B !important;
+}
+
+@media (max-width: 850px) {
+  
+    aside {
+        width: 57px !important;
+    }
+
+    header {
+        margin-left: 60px !important;
+    }
+
+    #nameinfo {
+        display: none !important;
+    }
+
+    #mainBody {
+        padding: 90px 10px 10px 65px !important;
+    }
+
+    #imageinfo {
+        width: 30px !important;
+        height: 30px !important;
+        margin-left: 0 !important;
+        position: absolute !important;
+        left: 90% !important;
+        top: 10px !important;
+        transform: translate(-50%,-50%) !important;
+    }
+
+    #accountinfo {
+        height: 60px !important;
+        position: relative !important;
+    }
+
+    .navtext {
+        display: none !important;
+    }
+
+    .dropdown-content {
+        position: fixed !important;
+        left: 57px !important;
+        top: 142px !important;
+        width: 220px !important;
+    }
+}

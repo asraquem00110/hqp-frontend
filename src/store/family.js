@@ -169,7 +169,6 @@ export default {
             })
         },
         editMember: function(context,data){
-            console.log(data)
             let fd = new FormData
             fd.append("fname",data.fname)
             fd.append("Bday",data.Bday)

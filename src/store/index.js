@@ -29,7 +29,7 @@ export default new Vuex.Store({
                 'Authorization': `Bearer ${localStorage.getItem('accesstoken')}`,
             }
         },
-        apiUrl: "http://192.168.100.12:8080",
+        apiUrl: "https://hqp-backend-00110.herokuapp.com",
     },
     getters: {
 

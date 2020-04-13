@@ -5,7 +5,7 @@
       <sideNav class="noprint"/>
     
         <div id="mainBody">
-           <router-view/>
+           <router-view v-if="islogin"/>
         </div>
       </div>
       

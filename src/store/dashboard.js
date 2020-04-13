@@ -8,7 +8,6 @@ export default {
         getData: function(context){
             Axios.get(`${context.rootState.apiUrl}/api/dashboard/getData`,context.rootState.headerconfig)
             .then((res)=>{
-                console.log(res.data)
                 context.commit("setData",res.data)
             })
             .catch((err)=>{

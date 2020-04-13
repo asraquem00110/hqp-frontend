@@ -98,8 +98,8 @@ export default new Vuex.Store({
                 })
                 .catch(err=>{
                     if(((err.response.status == 403 || err.response.status == 401) && err.response.data.msg)){
-                       // context.dispatch("logout")
-                       // window.location.href = "/"
+                       context.dispatch("logout")
+                       window.location.href = "/"
                     }
                     
                 }

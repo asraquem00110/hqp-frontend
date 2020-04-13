@@ -8,7 +8,7 @@
             <div class="card" id="logindiv">
                     <div class="card-body">
                         <div style="text-align:center">
-                        <span id="systemTitle">EHQ Management System</span>
+                        <span id="systemTitle">HQP Management System</span>
                         </div>
                               <div class="alert alert-danger alert-dismissible fade" ref="errormessage" role="alert">
                             <strong v-for="(error,index) in errormsg" :key="index">

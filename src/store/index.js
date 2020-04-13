@@ -53,7 +53,7 @@ export default new Vuex.Store({
         login: function(context,data){
             return new Promise((resolve,reject)=>{
          
-                   axios.post('http://192.168.100.12:8080/api/auth/login',data)
+                   axios.post(`${context.state.apiUrl}/api/auth/login`,data)
                    .then((res)=>{
                       
                         resolve(res)
@@ -67,7 +67,7 @@ export default new Vuex.Store({
         },
         logout: function(context){
 
-                axios.delete('http://192.168.100.12:8080/api/auth/logout',context.state.headerconfig)
+                axios.delete(`${context.state.apiUrl}/api/auth/logout`,context.state.headerconfig)
                 .then(()=>{
                     localStorage.removeItem('accesstoken')
                     localStorage.removeItem('refreshtoken')
@@ -89,7 +89,7 @@ export default new Vuex.Store({
         refreshtoken:function(context){
             // console.log(context.state.refreshtoken)
          
-                axios.post('http://192.168.100.12:8080/api/auth/refreshtoken',{refreshtoken: context.state.refreshtoken})
+                axios.post(`${context.state.apiUrl}/api/auth/refreshtoken`,{refreshtoken: context.state.refreshtoken})
                 .then((res)=>{
                     console.log(res)
                     context.dispatch("authenticated",res)

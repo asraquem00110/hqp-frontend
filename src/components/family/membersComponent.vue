@@ -12,7 +12,8 @@
                                           <button @click="removemember(index)" class="btn btn-default float-right"><span class="fa fa-times" style="color:maroon;"></span></button>
                                              <button @click="editmember(index)" class="btn btn-default float-right"><span class="fa fa-pen" style="color:green;"></span></button>
 
-                                            <img v-if="member.img != null && member.img && member.img != ''" style="position:relative;height: 150px;width:100%;margin-top:10px;margin-left:2px" :src="`${apiUrl}/public/images/families/${member.familyId}/${member.img}`"/>
+                                           <!-- <img v-if="member.img != null && member.img && member.img != ''" style="position:relative;height: 150px;width:100%;margin-top:10px;margin-left:2px" :src="`${apiUrl}/public/images/families/${member.familyId}/${member.img}`"/> -->
+                                             <img v-if="member.img != null && member.img && member.img != ''" style="position:relative;height: 150px;width:100%;margin-top:10px;margin-left:2px" :src="`${apiUrl}/public/images/families/${member.img}`"/>
                                             <img v-else style="position:relative;height: 150px;width:100%;margin-top:10px;margin-left:2px" :src="`${apiUrl}/public/images/default.png`"/>
                                             <table class="table">
                                                 <thead class="thead-dark">

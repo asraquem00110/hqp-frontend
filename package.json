@@ -1,4 +1,7 @@
 {
+   "engines": {
+    "node": "12.7.0"
+  },
   "name": "hqp",
   "version": "0.1.0",
   "private": true,

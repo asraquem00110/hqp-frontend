@@ -76,10 +76,11 @@ export default new Vuex.Store({
                     context.commit('changeislogin',{status: false})  
                 })
                 .catch((err)=>{
-                    console.log(err)
-                    if(err.response.status == 401 && err.response.data == "Unauthorized"){
-                        context.dispatch("refreshtoken")
-                    }           
+                    localStorage.removeItem('accesstoken')
+                    localStorage.removeItem('refreshtoken')
+                    localStorage.removeItem('userinfo')
+                    localStorage.removeItem('islogin')
+                    context.commit('changeislogin',{status: false})      
                 })
    
            

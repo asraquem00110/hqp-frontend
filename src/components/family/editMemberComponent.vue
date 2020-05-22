@@ -12,7 +12,8 @@
 
                         <div class="col-md-6">
                              <!-- <img v-if="member.img" :style="imgstyle" ref="imageMember" :src="`${apiUrl}/public/images/families/${member.familyId}/${member.img}`" @click="showuploadfile()"/> -->
-                             <img v-if="member.img" :style="imgstyle" ref="imageMember" :src="`${apiUrl}/public/images/families/${member.img}`" @click="showuploadfile()"/>
+                                <!-- <img v-if="member.img" :style="imgstyle" ref="imageMember" :src="`${apiUrl}/public/images/families/${member.img}`" @click="showuploadfile()"/> -->
+                              <img v-if="member.img" :style="imgstyle" ref="imageMember" :src="`https://00110xd.000webhostapp.com/citPublic/uploads/${member.img}`" @click="showuploadfile()"/>
                               <img v-else :style="imgstyle" ref="imageMember" :src="`${apiUrl}/public/images/default.png`" @click="showuploadfile()"/>
                               <input type="file" style="display:none;" ref="imgupload" accept=".png,.jpg,.jpeg" @change="onFileChange($event)"/>    
                         </div>

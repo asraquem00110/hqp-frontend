@@ -53,7 +53,7 @@ export default {
 //                 })
                     
                       Axios.post(`${context.rootState.apiUrl}/api/family/savemember`,fd,headerconfig)
-                        .then(()=>Axios.post('https://00110xd.000webhostapp.com/citPublic/upload.php',fd, {
+                        .then(()=>Axios.post('https://00110xd.000webhostapp.com/hqPublic/upload.php',fd, {
                             headers: {
                                 'content-type': 'multipart/form-data',
                                 'Accept': 'application/json',
@@ -175,7 +175,7 @@ export default {
                     resolve(res)
                     context.commit("setFamilyDetails",res.data.data)
                 })
-                .then(()=>Axios.post('https://00110xd.000webhostapp.com/citPublic/upload.php',fd, {
+                .then(()=>Axios.post('https://00110xd.000webhostapp.com/hqPublic/upload.php',fd, {
                     headers: {
                         'content-type': 'multipart/form-data',
                         'Accept': 'application/json',
@@ -213,7 +213,7 @@ export default {
                     resolve(res)
                     context.commit("setFamilyDetails",res.data.data)
                 })
-                .then(()=>Axios.post('https://00110xd.000webhostapp.com/citPublic/upload.php',fd, {
+                .then(()=>Axios.post('https://00110xd.000webhostapp.com/hqPublic/upload.php',fd, {
                     headers: {
                         'content-type': 'multipart/form-data',
                         'Accept': 'application/json',

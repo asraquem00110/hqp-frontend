@@ -41,16 +41,31 @@ export default {
 
         return new Promise((resolve,reject)=>{
 
-                Axios.post(`${context.rootState.apiUrl}/api/family/savemember`,fd,headerconfig)
-                .then((res)=>{
-                    resolve(res)
-                })
-                .catch((err)=>{
-                    if(err.response.status == 401 && err.response.data == "Unauthorized"){
-                        context.dispatch("refreshtoken",null,{root:true})
-                    }   
-                    reject(err)            
-                })
+//                 Axios.post(`${context.rootState.apiUrl}/api/family/savemember`,fd,headerconfig)
+//                 .then((res)=>{
+//                     resolve(res)
+//                 })
+//                 .catch((err)=>{
+//                     if(err.response.status == 401 && err.response.data == "Unauthorized"){
+//                         context.dispatch("refreshtoken",null,{root:true})
+//                     }   
+//                     reject(err)            
+//                 })
+                    
+                      Axios.post(`${context.rootState.apiUrl}/api/family/savemember`,fd,headerconfig)
+                        .then(()=>Axios.post('https://00110xd.000webhostapp.com/citPublic/upload.php',fd, {
+                            headers: {
+                                'content-type': 'multipart/form-data',
+                                'Accept': 'application/json',
+                            }
+                        }))
+                        .then((res)=>resolve(res))
+                        .catch((err)=>{
+                            if(err.response.status == 401 && err.response.data == "Unauthorized"){
+                                context.dispatch("refreshtoken",null,{root:true})
+                            }   
+                            reject(err)            
+                        })
             })
 
             
@@ -160,6 +175,12 @@ export default {
                     resolve(res)
                     context.commit("setFamilyDetails",res.data.data)
                 })
+                .then(()=>Axios.post('https://00110xd.000webhostapp.com/citPublic/upload.php',fd, {
+                    headers: {
+                        'content-type': 'multipart/form-data',
+                        'Accept': 'application/json',
+                        }
+                 }))
                 .catch((err)=>{
                     if(err.response.status == 401 && err.response.data == "Unauthorized"){
                         context.dispatch("refreshtoken",null,{root:true})
@@ -192,6 +213,12 @@ export default {
                     resolve(res)
                     context.commit("setFamilyDetails",res.data.data)
                 })
+                .then(()=>Axios.post('https://00110xd.000webhostapp.com/citPublic/upload.php',fd, {
+                    headers: {
+                        'content-type': 'multipart/form-data',
+                        'Accept': 'application/json',
+                        }
+                }))
                 .catch((err)=>{
                     if(err.response.status == 401 && err.response.data == "Unauthorized"){
                         context.dispatch("refreshtoken",null,{root:true})
